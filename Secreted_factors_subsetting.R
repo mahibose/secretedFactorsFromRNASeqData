@@ -4,8 +4,6 @@ library(ggplot2)
 library(ggtext)
 library(ggrepel)
 y=read.table("NexCre_Foxg1cKO_resCutOff.txt")
-colnames(y) <- y[1,] 
-
 up=read_excel("Upreg_NexCre_Foxg1_Subcellular_loc.xlsx")
 down=read_excel("Downreg_NexCre_Foxg1_Subcellular_loc.xlsx")
 
@@ -49,6 +47,5 @@ p4 <- ggplot(resDF, aes(log2FoldChange, -log10(padj), col = diffexpressed,
                   size=4) +  
   geom_vline(xintercept = 0, col="black") 
 p4
-library(plotly)
-ggplotly(p4)
+
 
